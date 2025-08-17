@@ -233,11 +233,12 @@ python -m unittest discover -s . -p "test*.py"
 
 ## 🛠️ Contributing
 
-- Fork repo
-- Create branch
-- Add feature + test
-- Submit PR
+If you’d like to contribute to this project, here’s how you can help:
 
+- **Fork the repository** → Make your own copy of this project on GitHub.
+- **Create a new branch** → Work on a separate branch for your changes (e.g., `feature/new-function`).
+- **Add your feature or bug fix with tests** → Write the code and include tests to ensure it works correctly.
+- **Open a Pull Request (PR)** → Submit your changes so they can be reviewed and merged into the main project.
 ---
 
 ## 🗺️ Roadmap
