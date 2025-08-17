@@ -2,377 +2,209 @@
 
 A comprehensive Python package for various mathematical and financial calculations. This package includes modules for compound interest, number theory (prime checking, factorial, permutation, combination), string manipulation, matrix operations, and basic statistics (mean, median, mode).
 
-## Installation
+[![PyPI version](https://img.shields.io/pypi/v/adpkg.svg)](https://pypi.org/project/adpkg/)
+[![Python](https://img.shields.io/pypi/pyversions/adpkg.svg)](https://pypi.org/project/adpkg/)
+[![License](https://img.shields.io/github/license/notamitgamer/adpkg)](https://github.com/notamitgamer/adpkg/blob/main/LICENSE)
 
-You can install this package using pip:
+---
+
+## 📦 Installation
+
+Install directly from PyPI:
 
 ```bash
 pip install adpkg
 ```
 
-## Usage
+Verify installation:
+```bash
+python -m pip show adpkg
+```
 
-Here are some examples of how to use the functions provided in this package:
+---
 
-### Finance Module (`finance.py`)
+## 🚀 Usage
 
-This module provides a function to calculate compound interest.
+Here are detailed module descriptions, parameters, return values, and examples.
+
+---
+
+### 💰 Finance Module (`finance.py`)
 
 **`interest(prime_amount, time_duration_str, number_of_times_interest_will_compound_per_year, rate_of_interest)`**
 
 Calculates the compound interest.
 
-* `prime_amount` (float or int): The initial principal amount (P).
-
-* `time_duration_str` (str): The duration for which the interest is calculated, **must be in specific short-hand formats**:
-
-  * "XyYm" (e.g., "5y6m", "1y8m" for 1 year 8 months)
-
-  * "Xm" (e.g., "15m", "6m" for 15 months, 6 months)
-
-  * "Xy" (e.g., "5y", "1y" for 5 years, 1 year)
-    Where X and Y are whole numbers.
-
-* `number_of_times_interest_will_compound_per_year` (float or int): The number of times interest is compounded per year (n) (e.g., 2 for half-yearly, 4 for quarterly, 12 for monthly, 365 for daily).
-
-* `rate_of_interest` (float or int): The annual nominal interest rate (as a percentage, e.g., 5 for 5%).
+**Parameters:**
+- `prime_amount` (float or int): Initial principal amount (P).
+- `time_duration_str` (str): Duration of investment, must be in short-hand formats:
+  - `XyYm` (e.g., `5y6m`, `1y8m`)
+  - `Xm` (e.g., `15m`, `6m`)
+  - `Xy` (e.g., `5y`, `1y`)
+- `number_of_times_interest_will_compound_per_year` (int): Compounding frequency (2=half-yearly, 4=quarterly, 12=monthly, 365=daily).
+- `rate_of_interest` (float): Annual nominal rate in percentage.
 
 **Returns:**
-
-* `float`: The compound interest amount earned, rounded to 3 decimal places.
-
-* `None`: If the input is not valid or any error occurs.
+- `float`: Compound interest amount (3 decimals).
+- `None`: If invalid.
 
 **Example:**
-
 ```python
 from adpkg import finance
 
-# Calculate interest for $1000 at 5% compounded monthly for 1 year
-interest_earned = finance.interest(1000, "1y", 12, 5)
-print(f"Compound interest: ${interest_earned}")
+# $1000 at 5% compounded monthly for 1 year
+i = finance.interest(1000, "1y", 12, 5)
+print(f"Compound interest: ${i}")
 ```
 
-### AdCustom Module (`adcustom.py`)
+---
 
-This module contains various utility functions for number theory, string manipulation, matrix operations, and statistics.
+### 🔢 AdCustom Module (`adcustom.py`)
 
 #### Number Theory
 
 **`check_prime(inp)`**
-
-Checks if the input integer is a Prime number.
-
-* `inp` (int): The non-negative integer to check.
-
-**Returns:**
-
-* `1`: If the input integer is Prime.
-
-* `0`: If the input integer is not Prime.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Input: integer
+- Returns: `1` (prime), `0` (not prime), `None` (invalid)
 
 ```python
 from adpkg import adcustom
-
-print(f"Is 17 prime? {adcustom.check_prime(17)}")
-print(f"Is 10 prime? {adcustom.check_prime(10)}")
+print(adcustom.check_prime(17))  # 1
+print(adcustom.check_prime(10))  # 0
 ```
 
 **`factorial(inp)`**
-
-Calculates the factorial of a given non-negative integer.
-
-* `inp` (int): A non-negative integer.
-
-**Returns:**
-
-* `int`: The factorial of the non-negative integer.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Input: integer ≥ 0
+- Returns: factorial
 
 ```python
-from adpkg import adcustom
-
-print(f"Factorial of 5: {adcustom.factorial(5)}")
+print(adcustom.factorial(5))  # 120
 ```
 
 **`permutation(total_item, chosen_item)`**
-
-Calculates the number of permutations P(n, k).
-
-* `total_item` (int): The total number of distinct items in the set (n).
-
-* `chosen_item` (int): The number of items to be arranged or chosen from the set at a time (k).
-
-**Returns:**
-
-* `int`: The number of permutations.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Input: n, k
+- Returns: P(n, k)
 
 ```python
-from adpkg import adcustom
-
-print(f"Permutations of 5 items taken 2 at a time: {adcustom.permutation(5, 2)}")
+print(adcustom.permutation(5, 2))  # 20
 ```
 
 **`combination(total_item, chosen_item)`**
-
-Calculates the number of combinations C(n, k).
-
-* `total_item` (int): The total number of distinct items in the set (n).
-
-* `chosen_item` (int): The number of items to be arranged or chosen from the set at a time (k).
-
-**Returns:**
-
-* `int`: The number of combinations.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Input: n, k
+- Returns: C(n, k)
 
 ```python
-from adpkg import adcustom
-
-print(f"Combinations of 5 items taken 2 at a time: {adcustom.combination(5, 2)}")
+print(adcustom.combination(5, 2))  # 10
 ```
+
+---
 
 #### String Manipulation
 
 **`string_reverse(string)`**
-
-Reverses the given string.
-
-* `string` (str): The input string.
-
-**Returns:**
-
-* `str`: The reversed string.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Input: string
+- Returns: reversed string
 
 ```python
-from adpkg import adcustom
-
-print(f"Reversed string 'hello': {adcustom.string_reverse('hello')}")
+print(adcustom.string_reverse("hello"))  # 'olleh'
 ```
+
+---
 
 #### Matrix Operations
 
 **`matrix_addition(matrix1, matrix2)`**
-
-Adds two input matrices.
-
-* `matrix1` (list of lists): The first matrix.
-
-* `matrix2` (list of lists): The second matrix.
-
-**Returns:**
-
-* `str`: A string representation of the resulting matrix.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
-
-```python
-from adpkg import adcustom
-
-mat1 = [[1, 2], [3, 4]]
-mat2 = [[5, 6], [7, 8]]
-print("Matrix Addition:")
-print(adcustom.matrix_addition(mat1, mat2))
-```
+- Adds two matrices
+- Returns: resulting matrix as string
 
 **`matrix_multiplication(matrix1, matrix2)`**
-
-Multiplies one input matrix with another input matrix.
-
-* `matrix1` (list of lists): The first matrix.
-
-* `matrix2` (list of lists): The second matrix.
-
-**Returns:**
-
-* `str`: A string representation of the resulting matrix.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
-
-```python
-from adpkg import adcustom
-
-mat1 = [[1, 2], [3, 4]]
-mat2 = [[5, 6], [7, 8]]
-print("Matrix Multiplication:")
-print(adcustom.matrix_multiplication(mat1, mat2))
-```
+- Multiplies two matrices
+- Returns: product as string
 
 **`matrix_transpose(matrix)`**
-
-Transposes a matrix (row becomes column, column becomes row).
-
-* `matrix` (list of lists): The input matrix.
-
-**Returns:**
-
-* `str`: A string representation of the transposed matrix.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
-
-```python
-from adpkg import adcustom
-
-mat = [[1, 2, 3], [4, 5, 6]]
-print("Matrix Transpose:")
-print(adcustom.matrix_transpose(mat))
-```
+- Transposes a matrix
+- Returns: result as string
 
 **`determinant_value(matrix)`**
-
-Calculates the determinant value of a given matrix. Currently supports matrices up to 3x3.
-
-* `matrix` (list of lists): The input matrix.
-
-**Returns:**
-
-* `int` or `float`: Determinant value of the given matrix.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+- Calculates determinant (supports ≤3x3)
+- Returns: determinant value
 
 ```python
-from adpkg import adcustom
+mat1 = [[1, 2], [3, 4]]
+mat2 = [[5, 6], [7, 8]]
 
-mat_2x2 = [[1, 2], [3, 4]]
-print(f"Determinant of 2x2 matrix: {adcustom.determinant_value(mat_2x2)}")
-
-mat_3x3 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-print(f"Determinant of 3x3 matrix: {adcustom.determinant_value(mat_3x3)}")
+print(adcustom.matrix_addition(mat1, mat2))
+print(adcustom.matrix_multiplication(mat1, mat2))
+print(adcustom.matrix_transpose(mat1))
+print(adcustom.determinant_value([[1, 2], [3, 4]]))
 ```
+
+---
 
 #### Statistics
 
-**`mean(inp_set)`**
-
-Calculates the mean value of a set.
-
-* `inp_set` (list or tuple): The input set of numbers.
-
-**Returns:**
-
-* `float`: Mean value of the input set.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+**`mean(inp_set)`**, **`median(inp_set)`**, **`mode(inp_set)`**
 
 ```python
-from adpkg import adcustom
-
-data = [1, 2, 3, 4, 5]
-print(f"Mean of {data}: {adcustom.mean(data)}")
+data = [1, 2, 2, 3, 4]
+print(adcustom.mean(data))    # 2.4
+print(adcustom.median(data))  # 2
+print(adcustom.mode(data))    # ([2], 2)
 ```
 
-**`median(inp_set)`**
+---
 
-Calculates the median value of a set.
-
-* `inp_set` (list or tuple): The input set of numbers.
-
-**Returns:**
-
-* `float`: Median value of the input set.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
-
-```python
-from adpkg import adcustom
-
-data_odd = [1, 3, 2, 5, 4]
-print(f"Median of {data_odd}: {adcustom.median(data_odd)}")
-
-data_even = [1, 2, 3, 4]
-print(f"Median of {data_even}: {adcustom.median(data_even)}")
-```
-
-**`mode(inp_set)`**
-
-Calculates the mode value(s) and their count(s) of a set.
-
-* `inp_set` (list or tuple): The input set.
-
-**Returns:**
-
-* `tuple`: A tuple containing a list of mode(s) and the highest count.
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
-
-```python
-from adpkg import adcustom
-
-data_mode = [1, 2, 2, 3, 4, 4, 4, 5]
-mode_values, count = adcustom.mode(data_mode)
-print(f"Mode(s) of {data_mode}: {mode_values} (occurred {count} times)")
-```
-
-### Triangle Module (`triangle.py`)
-
-This module calculates the area of a triangle using Heron's formula.
+### 🔺 Triangle Module (`triangle.py`)
 
 **`areaoftriangle(len_a, len_b, len_c, unit='')`**
 
-Calculates the area of a triangle using Heron's formula: $\\sqrt{s(s-a)(s-b)(s-c)}$
-
-* `len_a` (float or int): A positive number as length of side 'a'.
-
-* `len_b` (float or int): A positive number as length of side 'b'.
-
-* `len_c` (float or int): A positive number as length of side 'c'.
-
-* `unit` (str, optional): Unit of the area (e.g., "sq cm", "m^2"). Defaults to "".
-
-**Returns:**
-
-* `float`: Area of the triangle, rounded to 3 decimal places (if no unit is provided).
-
-* `str`: Area of the triangle with the specified unit (e.g., "12.345 sq cm").
-
-* `None`: If the input is not valid or any error occurs.
-
-**Example:**
+Calculates the area using **Heron's Formula**.
 
 ```python
 from adpkg import triangle
 
-# Calculate area of a 3-4-5 right triangle
-area = triangle.areaoftriangle(3, 4, 5, unit="sq cm")
-print(f"Area of triangle: {area}")
+print(triangle.areaoftriangle(3, 4, 5))            # 6.0
+print(triangle.areaoftriangle(3, 4, 5, "sq cm"))  # '6.0 sq cm'
 ```
 
-## Contributing
+---
 
-If you'd like to contribute to this project, please feel free to fork the repository, make your changes, and submit a pull request.
+## 🧪 Running Tests
 
-## License
+The repo includes `test1.py`–`test5.py`, each focusing on specific modules.
+
+Run tests individually:
+```bash
+python test1.py
+python test2.py
+python test3.py
+```
+
+Run all with unittest:
+```bash
+python -m unittest discover -s . -p "test*.py"
+```
+
+---
+
+## 🛠️ Contributing
+
+- Fork the repo
+- Create a branch
+- Add new utilities / bug fixes
+- Submit a pull request
+
+Please include **tests** for new features.
+
+---
+
+## 🗺️ Roadmap
+- ✅ Current: Number theory, finance, matrices, statistics, triangles
+- 🔜 Upcoming: Probability, calculus helpers, polynomial tools, advanced linear algebra
+- 📊 Long-term: Machine learning helpers, symbolic algebra, optimization functions
+
+---
+
+## 📜 License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
