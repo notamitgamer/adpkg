@@ -16,8 +16,6 @@ It includes modules for:
 [![Downloads](https://pepy.tech/badge/adpkg)](https://pepy.tech/project/adpkg)
 [![Last Commit](https://img.shields.io/github/last-commit/notamitgamer/adpkg)](https://github.com/notamitgamer/adpkg/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/notamitgamer/adpkg)](https://github.com/notamitgamer/adpkg/graphs/contributors)
-[![Build](https://img.shields.io/github/actions/workflow/status/notamitgamer/adpkg/python-package.yml?branch=main)](https://github.com/notamitgamer/adpkg/actions)
-[![Coverage](https://img.shields.io/codecov/c/github/notamitgamer/adpkg)](https://codecov.io/gh/notamitgamer/adpkg)
 
 ---
 
