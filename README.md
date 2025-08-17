@@ -224,3 +224,15 @@ Want to help? Awesome! Here’s how:
 ## 📜 License
 
 This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+---
+
+## 📬 Contact
+
+[![Author](https://img.shields.io/badge/Author-Amit%20Dutta-blue)](https://github.com/notamitgamer)  
+[![Email](https://img.shields.io/badge/Email-amitdutta4255%40gmail.com-red)](mailto:amitdutta4255@gmail.com)  
+[![GitHub](https://img.shields.io/badge/GitHub-notamitgamer-black)](https://github.com/notamitgamer)  
+[![PyPI](https://img.shields.io/badge/PyPI-adpkg-green)](https://pypi.org/project/adpkg/)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-notamitgamer-0A66C2)](https://linkedin.com/in/notamitgamer)  
+[![Twitter](https://img.shields.io/badge/Twitter-@notamitgamer-1DA1F2)](https://twitter.com/notamitgamer)  
+[![Instagram](https://img.shields.io/badge/Instagram-notamitgamer-E4405F)](https://instagram.com/notamitgamer)
