@@ -4,7 +4,7 @@ Welcome! 👋 This package gives you a bunch of handy tools for math, finance, a
 
 It includes modules for:
 - **Finance**: Calculate compound interest easily
-- **Number Theory**: Check primes, factorials, permutations, combinations
+- **Number Theory**: Check primes, factorials, permutations and combinations
 - **Strings**: Reverse words or phrases
 - **Matrices**: Add, multiply, transpose, and find determinants
 - **Statistics**: Mean, median, mode
